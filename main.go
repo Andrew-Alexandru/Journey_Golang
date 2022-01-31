@@ -11,7 +11,8 @@ func main() {
 	const conferenceTickets int = 50
 	var remainingTickets uint = 50
 	//var bookings = [50]string{}
-	var bookings [50]string
+	//example of empty slice var bookings = []string{} or bookings := []string{}
+	var bookings []string
 	//%T - stands for Type and %v stands for value
 
 	fmt.Printf("Welcome to %v booking application\n", conferenceName)
@@ -34,11 +35,12 @@ func main() {
 	fmt.Scan(&userTickets)
 
 	remainingTickets = remainingTickets - uint(userTickets)
-	bookings[0] = firstName + " " + lastName
-	fmt.Printf("The whole array %v \n", bookings)
+	// example of slices in GO
+	bookings = append(bookings, firstName+" "+lastName)
+	fmt.Printf("The whole slice %v \n", bookings)
 	fmt.Printf("The first value %v \n", bookings[0])
-	fmt.Printf("Array type %T\n", bookings)
-	fmt.Printf("Array size: %v \n", len(bookings))
+	fmt.Printf("slice type %T\n", bookings)
+	fmt.Printf("slice size: %v \n", len(bookings))
 
 	fmt.Printf("Thank you %v %v for booking %v tickets. You will receive a confirmation email at %v\n", firstName, lastName, userTickets, email)
 	fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceName)
